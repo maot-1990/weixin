@@ -1,13 +1,41 @@
-<!--index.wxml-->
+<!--weather.wxml-->
+<!-- <image src="../../assets/day.jpg" class="bg"></image> -->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+ 
+  <view class="nowWeather">
+    <view class="city w">{{nowInfo.location.name}}</view>
+    <view class="temp w b">{{nowInfo.now.temperature}}°</view>
+    <view class="weather w">{{nowInfo.now.text}} | 空气 {{qlty}}</view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+ 
+  <view class="weahterDetail">
+    <view class="">
+      <view class="w center">{{dir}}</view>
+      <view wx:if="{{sc == '微风'}}" class="w b center f50">微风</view>
+      <view wx:else class="w b center f50">{{sc}}级</view>
+    </view>
+    <view class="l"></view>
+    <view class="">
+      <view class="w center">相对湿度</view>
+      <view class="w b center f50">{{hum}}%</view>
+    </view>
+    <view class="l"></view>
+    <view class="">
+      <view class="w center">体感温度</view>
+      <view class="w b center f50">{{fl}}°</view>
+    </view>
+  </view>
+ 
+</view>
+ 
+ 
+<view wx:for="{{daily_forecast}}" wx:for-index="i" wx:for-item="item">
+  <view class="hor forcast">
+    <view class="center">{{day[i]}}</view>
+    <view class="hor">
+      <image class="img" src="../../assets/icons/{{item.cond.code_d}}.png"></image>
+      <view class="center">{{item.cond.txt_d}}|{{qlty}}</view>
+    </view>
+    <view class="center">{{item.tmp.min}}°/ {{item.tmp.max}}°</view>
   </view>
 </view>

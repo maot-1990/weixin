@@ -58,7 +58,7 @@ Page({
       wx.redirectTo({
         url: '/pages/weather/weather'
       })
-    }, 3000);
+    }, 1000);
     console.log("onReady");
   }
 })

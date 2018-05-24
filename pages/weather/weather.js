@@ -1,11 +1,9 @@
 //获取应用实例
 const app = getApp()
+const util = require('../../utils/util.js')
 Page({
   data: {
-    motto: 'Welcome!',
-    userInfo: {},
-    hasUserInfo: false,
-    newLocation: '',
+    location: '',
     nowInfo: '',
     lifeInfo: '',
     weatherInfo: ''
@@ -20,13 +18,14 @@ Page({
         var newLocation = '39.93:116.40'; 
         if(res){newLocation = res.latitude + ":" + res.longitude}
         self.setData({
-          newLocation: newLocation
+          location: newLocation
         })
 
       //初始化获取 当前的天气状况
         wx.request({
           url: 'https://api.seniverse.com/v3/weather/now.json?key=fdw9qkun1btvenxt&location=' + newLocation+'&language=zh-Hans&unit=c',
           success: function (result) {
+            console.log("nowInfo:" + util.jsonToString(result.data))
             self.setData({
               nowInfo: result.data.results[0]
             })
@@ -39,9 +38,11 @@ Page({
           wx.request({
           url: 'https://api.seniverse.com/v3/life/suggestion.json?key=fdw9qkun1btvenxt&location=' + newLocation + '&language=zh-Hans',
             success: function (result) {
+              console.log("lifeInfo:" + util.jsonToString(result.data))
               self.setData({
                 lifeInfo: result.data.results[0].suggestion
               })
+              //console.log(lifeInfo)
             },
             fail: function ({ errMsg }) {
               console.log('request fail', errMsg)
@@ -51,13 +52,15 @@ Page({
           wx.request({
           url: 'https://api.seniverse.com/v3/weather/daily.json?key=fdw9qkun1btvenxt&location=' + newLocation + '&language=zh-Hans&unit=c&start=0&days=5',
             success: function (result) {
+              console.log("weatherInfo:" + util.jsonToString(result.data))
               self.setData({
-                //weatherInfo: result.data.results[0]
-                weatherInfo: formatDate(result.data.results[0])
+                weatherInfo: result.data.results[0]
               })
+              //console.log(weatherInfo)
             },
           })
       }
     })
+
   }
 })
