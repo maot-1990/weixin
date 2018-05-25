@@ -2,7 +2,7 @@
 <view>
     <loading hidden="{{showLoading}}">加载中</loading>
 </view>
-<image src="./{{imgUrl}}" class="bg shadow"></image>
+<image src="{{imgUrl}}" class="bg shadow"></image>
 <view class="container {{color}}">
 
   <view class="nowWeather">
