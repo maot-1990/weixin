@@ -83,4 +83,5 @@
 .bottom{
   margin: 25rpx;
   margin-left: 75rpx;
+  height: 100rpx;
 }
