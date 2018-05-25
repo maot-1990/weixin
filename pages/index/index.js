@@ -42,7 +42,7 @@ Page({
         }
       })
     }
-    console.log("onLoad");
+    //console.log("onLoad");
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -53,12 +53,12 @@ Page({
     })
   },
   onReady: function(){
-    console.log("onReady");
+    //console.log("onReady");
     setTimeout(function(){
       wx.redirectTo({
         url: '/pages/weather/weather'
       })
     }, 1000);
-    console.log("onReady");
+    //console.log("onReady");
   }
 })

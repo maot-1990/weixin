@@ -63,6 +63,12 @@ function objToStrMap(obj) {
   return strMap;
 }  
 
+function replaceWeixin(str, source, target){
+  //console.log("str=" + str + ",source=" + source + ",target=" + target)
+  
+  return str.replace(/\低温 /g, target).replace(/\高温 /g, target).replace(/\星期一/g, target).replace(/\星期二/g, target).replace(/\星期三/g, target).replace(/\星期四/g, target).replace(/\星期五/g, target).replace(/\星期六/g, target).replace(/\星期日/g, target)
+}
+
 module.exports = {
   formatTime: formatTime,
   stringToJson: stringToJson,
@@ -70,5 +76,6 @@ module.exports = {
   mapToJson: mapToJson,
   jsonToMap: jsonToMap,
   strMapToObj: strMapToObj,
-  objToStrMap: objToStrMap
+  objToStrMap: objToStrMap,
+  replaceWeixin: replaceWeixin
 }

@@ -1,41 +1,47 @@
 <!--weather.wxml-->
-<!-- <image src="../../assets/day.jpg" class="bg"></image> -->
+<view>
+    <loading hidden="{{showLoading}}">加载中</loading>
+</view>
+<image src="./{{imgUrl}}" class="bg shadow"></image>
 <view class="container">
- 
+
   <view class="nowWeather">
-    <view class="city w">{{nowInfo.location.name}}</view>
-    <view class="temp w b">{{nowInfo.now.temperature}}°</view>
-    <view class="weather w">{{nowInfo.now.text}} | 空气 {{qlty}}</view>
+    <view class="city w">{{nowInfo.city}}</view>
+    <view class="temp w b">{{nowInfo.data.wendu}}°</view>
+    <view class="weather w">{{nowInfo.data.forecast[0].type}} | 空气质量 {{nowInfo.data.quality}} 
+    <view class="city w">{{nowInfo.data.ganmao}}</view></view>
   </view>
- 
+
   <view class="weahterDetail">
     <view class="">
-      <view class="w center">{{dir}}</view>
-      <view wx:if="{{sc == '微风'}}" class="w b center f50">微风</view>
-      <view wx:else class="w b center f50">{{sc}}级</view>
+      <view class="w center">{{nowInfo.data.forecast[0].fx}} </view>
+      <view class="w center f50">{{nowInfo.data.forecast[0].fl}}</view>
     </view>
     <view class="l"></view>
     <view class="">
       <view class="w center">相对湿度</view>
-      <view class="w b center f50">{{hum}}%</view>
+      <view class="w center f50">{{nowInfo.data.shidu}}</view>
     </view>
     <view class="l"></view>
     <view class="">
-      <view class="w center">体感温度</view>
-      <view class="w b center f50">{{fl}}°</view>
+      <view class="w center">{{nowInfo.data.forecast[0].low}}</view>
+      <view class="w center">{{nowInfo.data.forecast[0].high}}</view>
     </view>
   </view>
- 
 </view>
- 
- 
-<view wx:for="{{daily_forecast}}" wx:for-index="i" wx:for-item="item">
-  <view class="hor forcast">
-    <view class="center">{{day[i]}}</view>
-    <view class="hor">
-      <image class="img" src="../../assets/icons/{{item.cond.code_d}}.png"></image>
-      <view class="center">{{item.cond.txt_d}}|{{qlty}}</view>
+
+<view class="container_buttom">
+  <view wx:for="{{nowInfo.data.forecast}}" wx:for-index="0" wx:for-item="item" >
+    <view class="hor forcast">
+      <view class="center">{{item.date}}</view>
+      <view class="hor">
+        <image class="img" src=""></image>
+        <view class="center">{{item.type}}</view>
+      </view>
+      <view class="center">{{item.low}}/{{item.high}}</view>
     </view>
-    <view class="center">{{item.tmp.min}}°/ {{item.tmp.max}}°</view>
+  </view>
+  <view class="bottom">
+    {{nowInfo.data.forecast[0].notice}}
   </view>
 </view>
