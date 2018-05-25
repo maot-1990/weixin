@@ -70,8 +70,6 @@ Page({
             console.log('request fail', errMsg)
           }
         })
-
-
       }
     })
     
