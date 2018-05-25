@@ -24,7 +24,7 @@ Page({
       nowColor = 'white';
     }
     this.setData({
-      imgUrl: nowImgUrl, 
+      imgUrl: nowImgUrl,
       color: nowColor
     })
     var self = this
@@ -77,7 +77,7 @@ Page({
         })
       }
     })
-    
+
   },
   showLoading: function () {
     this.setData({

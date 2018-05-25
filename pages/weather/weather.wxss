@@ -1,64 +1,61 @@
-.white{
-  color: 	#E0EEEE;
+.white {
+  color: #e0eeee;
 }
-.b{
+
+.b {
   font-weight: bold;
 }
- 
-.l{
+
+.l {
   border: 1rpx solid #fff;
 }
- 
-.center{
+
+.center {
   text-align: center;
   margin: auto 0;
 }
- 
-.hor{
+
+.hor {
   display: flex;
 }
- 
-.f50{
+
+.f50 {
   font-size: 50rpx;
 }
- 
+
 /**index css**/
- 
- 
+
 .bg {
-  width: 98%;
   height: 650rpx;
-  padding:1px;
-  border:solid #FFF8DC 2px;
-  border-radius:10px;
-  -moz-border-radius:10px;
-  -webkit-border-radius:10px;
+  padding: 1px;
+  border-radius: 10px;
+  width: 99.6%;
 }
- 
-.temp{
+
+.temp {
   font-size: 120rpx;
 }
- 
+
 .container {
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
   padding: 0;
   margin: 0;
   height: 700rpx;
   display: block;
 }
- 
+
 .container_buttom {
-  background: #FFFAFA;
+  background: #fffafa;
+   border-radius: 10px;
 }
 
-.nowWeather{
+.nowWeather {
   padding: 60rpx;
 }
- 
-.weahterDetail{
+
+.weahterDetail {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -66,22 +63,24 @@
   position: absolute;
   bottom: 50rpx;
 }
- 
-.forcast{
+
+.forcast {
   padding: 30rpx;
   margin-left: 16rpx;
   margin-right: 16rpx;
   border-bottom: 1rpx solid #eee;
   justify-content: space-around;
 }
- 
-.img{
+
+.img {
   width: 60rpx;
   height: 60rpx;
   margin-right: 16rpx;
 }
-.bottom{
+
+.bottom {
   margin: 25rpx;
   margin-left: 75rpx;
   height: 100rpx;
+ 
 }
