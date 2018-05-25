@@ -1,5 +1,5 @@
-.w{
-  color: black;
+.white{
+  color: 	#E0EEEE;
 }
 .b{
   font-weight: bold;
@@ -30,9 +30,9 @@
   height: 650rpx;
   padding:1px;
   border:solid #FFF8DC 2px;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
 }
  
 .temp{

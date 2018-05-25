@@ -6,21 +6,26 @@ Page({
     location: '',
     nowInfo: '',
     imgUrl: '',
-    showLoading: false
+    showLoading: false,
+    color: ''
   },
   onReady: function () {
     //初始化加载数据
     //判断白天还是晚上
     var nowDate = new Date();
     var nowImgUrl = '';
+    var nowColor = '';
     var hour = nowDate.getHours();
-    if (hour > 7 && hour < 19) {
+    if ((hour > 7 && hour < 19)) {
       nowImgUrl = "day.jpg"
+      nowColor = '';
     } else {
       nowImgUrl = "night.jpg"
+      nowColor = 'white';
     }
     this.setData({
-      imgUrl: nowImgUrl
+      imgUrl: nowImgUrl, 
+      color: nowColor
     })
     var self = this
     //获取定位信息 经纬度

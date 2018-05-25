@@ -3,29 +3,29 @@
     <loading hidden="{{showLoading}}">加载中</loading>
 </view>
 <image src="./{{imgUrl}}" class="bg shadow"></image>
-<view class="container">
+<view class="container {{color}}">
 
   <view class="nowWeather">
-    <view class="city w">{{nowInfo.city}}</view>
-    <view class="temp w b">{{nowInfo.data.wendu}}°</view>
-    <view class="weather w">{{nowInfo.data.forecast[0].type}} | 空气质量 {{nowInfo.data.quality}} 
-    <view class="city w">{{nowInfo.data.ganmao}}</view></view>
+    <view class="city">{{nowInfo.city}}</view>
+    <view class="temp b f50">{{nowInfo.data.wendu}}°</view>
+    <view class="weather">{{nowInfo.data.forecast[0].type}} | 空气质量 {{nowInfo.data.quality}} 
+    <view class="city">{{nowInfo.data.ganmao}}</view></view>
   </view>
 
   <view class="weahterDetail">
     <view class="">
-      <view class="w center">{{nowInfo.data.forecast[0].fx}} </view>
-      <view class="w center">{{nowInfo.data.forecast[0].fl}}</view>
+      <view class="center">{{nowInfo.data.forecast[0].fx}} </view>
+      <view class="center">{{nowInfo.data.forecast[0].fl}}</view>
     </view>
     <view class="l"></view>
     <view class="">
-      <view class="w center">相对湿度</view>
-      <view class="w center">{{nowInfo.data.shidu}}</view>
+      <view class="center">相对湿度</view>
+      <view class="center">{{nowInfo.data.shidu}}</view>
     </view>
     <view class="l"></view>
     <view class="">
-      <view class="w center">{{nowInfo.data.forecast[0].low}}</view>
-      <view class="w center">{{nowInfo.data.forecast[0].high}}</view>
+      <view class="center">{{nowInfo.data.forecast[0].low}}</view>
+      <view class="center">{{nowInfo.data.forecast[0].high}}</view>
     </view>
   </view>
 </view>
